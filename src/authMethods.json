@@ -1,5 +1,5 @@
 {
-    "google": true,
+    "google": false,
     "facebook": false,
     "microsoft": false,
     "apple": false,
