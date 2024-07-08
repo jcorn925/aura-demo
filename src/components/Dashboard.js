@@ -75,20 +75,6 @@ export const Dashboard = () => {
     setMedicationData(newMedications);
   };
 
-  const handlePopulatePatientData = async () => {
-    const populatePatientDataOnCall = httpsCallable(functions, 'populatePatientDataOnCall');
-    try {
-      await populatePatientDataOnCall();
-      // Refresh the patient data after calling the function
-      const getPatientData = httpsCallable(functions, 'getPatientData');
-      const result = await getPatientData();
-      setPatients(result.data.patients);
-      setSelectedPatient(result.data.patients[0]);
-    } catch (error) {
-      console.error('Error populating patient data:', error);
-    }
-  };
-
   return (
     <div className="dashboard-container">
       <div className="sidebar">
@@ -133,7 +119,6 @@ export const Dashboard = () => {
             onTemperatureUpdated={handleTemperatureUpdated} // Pass the update callback
           />
         )}
-        <button className="populate-button" onClick={handlePopulatePatientData}>Populate Patient Data</button>
       </div>
     </div>
   );
