@@ -1,0 +1,8 @@
+{
+    "google": true,
+    "facebook": false,
+    "microsoft": false,
+    "apple": false,
+    "twitter": false,
+    "github": false
+}
